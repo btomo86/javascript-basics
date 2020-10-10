@@ -1,61 +1,87 @@
 const getNthElement = (index, array) => {
-  // your code here
+  const arrLength = array.length;
+  let positionToLookFor;
+  if (index + 1 > arrLength) {
+    positionToLookFor = index - arrLength;
+  } else {
+    positionToLookFor = index;
+  }
+  return array[positionToLookFor];
 };
 
 const arrayToCSVString = array => {
-  // your code here
+  return array.toString();
 };
 
 const csvStringToArray = string => {
-  // your code here
+  return string.split(",");
 };
 
 const addToArray = (element, array) => {
-  // your code here
+  array.push(element);
 };
 
 const addToArray2 = (element, array) => {
-  // your code here
+  return array.concat(element);
 };
 
 const removeNthElement = (index, array) => {
-  // your code here
+  return array.splice(index, 1);
 };
 
 const numbersToStrings = numbers => {
-  // your code here
+  return numbers.map(String);
 };
 
 const uppercaseWordsInArray = strings => {
-  // your code here
+  return strings.map(e => {
+    return e.toUpperCase();
+  });
 };
 
 const reverseWordsInArray = strings => {
-  // your code here
+  return strings.map(word =>
+    word
+      .split("")
+      .reverse()
+      .join("")
+  );
 };
 
 const onlyEven = numbers => {
-  // your code here
+  return numbers.filter(number => number % 2 === 0);
 };
 
 const removeNthElement2 = (index, array) => {
-  // your code here
+  return array.filter(e => e !== array[index]);
 };
 
 const elementsStartingWithAVowel = strings => {
-  // your code here
+  return strings.filter(e => /^[aeiou]/i.test(e));
 };
 
 const removeSpaces = string => {
-  // your code here
+  return string.replace(/\s+/g, "");
 };
 
 const sumNumbers = numbers => {
-  // your code here
+  let total = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    total += Number(numbers[i]);
+  }
+  return total;
 };
 
 const sortByLastLetter = strings => {
-  // your code here
+  const reverseString = item =>
+    item
+      .split("")
+      .reverse()
+      .join("");
+  return strings
+    .map(reverseString)
+    .sort()
+    .map(reverseString);
 };
 
 module.exports = {
